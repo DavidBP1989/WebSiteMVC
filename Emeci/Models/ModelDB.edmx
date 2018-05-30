@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EmeciModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="NewMembership">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="_Date" Type="smalldatetime" />
+          <Property Name="Reference" Type="nvarchar" MaxLength="100" />
+          <Property Name="Status" Type="int" />
+          <Property Name="ReferenceBank" Type="nvarchar" MaxLength="50" />
+          <Property Name="PaymentMethod" Type="nvarchar" MaxLength="30" />
+          <Property Name="EMECI" Type="nvarchar" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="Registro">
+          <Key>
+            <PropertyRef Name="idRegistro" />
+          </Key>
+          <Property Name="idRegistro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Apellido" Type="nvarchar" MaxLength="50" />
+          <Property Name="Domicilio" Type="nvarchar" MaxLength="150" />
+          <Property Name="Colonia" Type="nvarchar" MaxLength="150" />
+          <Property Name="idCiudad" Type="int" />
+          <Property Name="idEstado" Type="nvarchar" MaxLength="2" />
+          <Property Name="IdPais" Type="nvarchar" MaxLength="2" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="50" />
+          <Property Name="TelefonoCel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tipo" Type="nvarchar" MaxLength="1" />
+          <Property Name="Status" Type="nvarchar" MaxLength="1" />
+          <Property Name="IdUsuario" Type="nvarchar" MaxLength="25" />
+          <Property Name="FechaRegistro" Type="smalldatetime" />
+          <Property Name="FechaExpiracion" Type="smalldatetime" />
+          <Property Name="Emails" Type="nvarchar" MaxLength="150" />
+          <Property Name="FechaRenovacion" Type="smalldatetime" />
+          <Property Name="OtraCiudad" Type="nvarchar" MaxLength="50" />
+          <Property Name="NoExt" Type="nvarchar" MaxLength="5" />
+          <Property Name="CodigoPostal" Type="nvarchar" MaxLength="5" />
+          <Property Name="clave" Type="nvarchar" MaxLength="15" />
+          <Property Name="Emeci" Type="nvarchar" MaxLength="16" />
+          <Property Name="apellido2" Type="nvarchar" MaxLength="25" />
+        </EntityType>
+        <EntityContainer Name="EmeciModelStoreContainer">
+          <EntitySet Name="NewMembership" EntityType="Self.NewMembership" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Registro" EntityType="Self.Registro" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EmeciModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="EmeciEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="NewMembership" EntityType="EmeciModel.NewMembership" />
+          <EntitySet Name="Registro" EntityType="EmeciModel.Registro" />
+        </EntityContainer>
+        <EntityType Name="NewMembership">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="C_Date" Type="DateTime" Precision="0" />
+          <Property Name="Reference" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="ReferenceBank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentMethod" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="EMECI" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Registro">
+          <Key>
+            <PropertyRef Name="idRegistro" />
+          </Key>
+          <Property Name="idRegistro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Domicilio" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Colonia" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="idCiudad" Type="Int32" />
+          <Property Name="idEstado" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="IdPais" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TelefonoCel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tipo" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="IdUsuario" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="FechaRegistro" Type="DateTime" Precision="0" />
+          <Property Name="FechaExpiracion" Type="DateTime" Precision="0" />
+          <Property Name="Emails" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FechaRenovacion" Type="DateTime" Precision="0" />
+          <Property Name="OtraCiudad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NoExt" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="CodigoPostal" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="clave" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Emeci" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="apellido2" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EmeciModelStoreContainer" CdmEntityContainer="EmeciEntities">
+          <EntitySetMapping Name="NewMembership">
+            <EntityTypeMapping TypeName="EmeciModel.NewMembership">
+              <MappingFragment StoreEntitySet="NewMembership">
+                <ScalarProperty Name="EMECI" ColumnName="EMECI" />
+                <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+                <ScalarProperty Name="ReferenceBank" ColumnName="ReferenceBank" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Reference" ColumnName="Reference" />
+                <ScalarProperty Name="C_Date" ColumnName="_Date" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Registro">
+            <EntityTypeMapping TypeName="EmeciModel.Registro">
+              <MappingFragment StoreEntitySet="Registro">
+                <ScalarProperty Name="apellido2" ColumnName="apellido2" />
+                <ScalarProperty Name="Emeci" ColumnName="Emeci" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+                <ScalarProperty Name="NoExt" ColumnName="NoExt" />
+                <ScalarProperty Name="OtraCiudad" ColumnName="OtraCiudad" />
+                <ScalarProperty Name="FechaRenovacion" ColumnName="FechaRenovacion" />
+                <ScalarProperty Name="Emails" ColumnName="Emails" />
+                <ScalarProperty Name="FechaExpiracion" ColumnName="FechaExpiracion" />
+                <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="TelefonoCel" ColumnName="TelefonoCel" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="IdPais" ColumnName="IdPais" />
+                <ScalarProperty Name="idEstado" ColumnName="idEstado" />
+                <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
+                <ScalarProperty Name="Colonia" ColumnName="Colonia" />
+                <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="idRegistro" ColumnName="idRegistro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

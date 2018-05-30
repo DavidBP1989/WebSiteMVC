@@ -1,0 +1,26 @@
+﻿@model Emeci.Models.PayUModel
+
+<form method="post" action="@Model.url">
+    @Html.HiddenFor(x => x.merchantId)
+    @Html.HiddenFor(x => x.accountId)
+    @Html.HiddenFor(x => x.description)
+    @Html.HiddenFor(x => x.referenceCode)
+    @Html.HiddenFor(x => x.amount)
+    @Html.HiddenFor(x => x.tax)
+    @Html.HiddenFor(x => x.taxReturnBase)
+    @Html.HiddenFor(x => x.currency)
+    @Html.HiddenFor(x => x.signature)
+    @Html.HiddenFor(x => x.buyerEmail)
+    @Html.HiddenFor(x => x.lng)
+    @Html.HiddenFor(x => x.responseUrl)
+    @Html.HiddenFor(x => x.confirmationUrl)
+    @if (Model.AllowTest)
+    {
+        @Html.HiddenFor(x => x.test);
+    }
+</form>
+<script>
+    window.onload = function () {
+        document.forms[0].submit();
+    }
+</script>

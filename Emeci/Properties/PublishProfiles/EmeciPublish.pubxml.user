@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>\\Mac\Home\Documents\DAVID-PROYECTOS\PUBLICACIONES\Emeci_PUBLICADO</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Emeci.dll">
+      <publishTime>05/30/2018 12:55:43</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>11/03/2015 17:43:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>06/15/2015 02:06:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>04/23/2012 15:23:58</publishTime>
+    </File>
+    <File Include="bin/Postal.dll">
+      <publishTime>05/09/2014 09:15:08</publishTime>
+    </File>
+    <File Include="bin/RazorEngine.dll">
+      <publishTime>01/17/2014 10:17:04</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:44</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/28/2015 04:02:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/28/2015 04:02:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="Content/CSS/bootstrap.css">
+      <publishTime>05/14/2018 12:04:40</publishTime>
+    </File>
+    <File Include="Content/CSS/emeci.css">
+      <publishTime>05/14/2018 20:44:15</publishTime>
+    </File>
+    <File Include="Content/Images/check.png">
+      <publishTime>05/14/2018 12:04:18</publishTime>
+    </File>
+    <File Include="Content/Images/depositos.png">
+      <publishTime>05/14/2018 20:29:36</publishTime>
+    </File>
+    <File Include="Content/Images/icono-acceso.png">
+      <publishTime>05/14/2018 12:04:18</publishTime>
+    </File>
+    <File Include="Content/Images/icono-facebook.png">
+      <publishTime>05/14/2018 12:04:18</publishTime>
+    </File>
+    <File Include="Content/Images/icono-twitter.png">
+      <publishTime>05/14/2018 12:04:18</publishTime>
+    </File>
+    <File Include="Content/Images/logo-emeci.png">
+      <publishTime>05/14/2018 12:04:18</publishTime>
+    </File>
+    <File Include="Content/Images/tarjetas.png">
+      <publishTime>05/14/2018 20:29:36</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>05/14/2018 11:48:30</publishTime>
+    </File>
+    <File Include="Models/ModelDB.edmx.diagram">
+      <publishTime>05/16/2018 20:16:41</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>05/16/2018 21:18:09</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>05/14/2018 12:03:40</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.11.3.min.js">
+      <publishTime>05/14/2018 12:03:40</publishTime>
+    </File>
+    <File Include="Scripts/jquery.maskedinput.js">
+      <publishTime>05/16/2018 20:41:59</publishTime>
+    </File>
+    <File Include="Scripts/Membership.js">
+      <publishTime>05/21/2018 12:40:19</publishTime>
+    </File>
+    <File Include="Scripts/Tool.js">
+      <publishTime>05/21/2018 01:36:30</publishTime>
+    </File>
+    <File Include="Views/Emails/EmailMembership.cshtml">
+      <publishTime>05/16/2018 23:48:16</publishTime>
+    </File>
+    <File Include="Views/Emails/Web.config">
+      <publishTime>05/16/2018 21:18:08</publishTime>
+    </File>
+    <File Include="Views/Emails/_ViewStart.cshtml">
+      <publishTime>05/16/2018 21:18:08</publishTime>
+    </File>
+    <File Include="Views/Home/Membership.cshtml">
+      <publishTime>05/29/2018 13:15:33</publishTime>
+    </File>
+    <File Include="Views/PayU/PayUReq.cshtml">
+      <publishTime>05/15/2018 23:34:03</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>05/14/2018 20:57:57</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>05/16/2018 12:28:05</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>05/16/2018 23:51:23</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EMECI</title>
+
+    <link href="~/Content/CSS/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/CSS/emeci.css" rel="stylesheet" />
+</head>
+<body class="page">
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <img src="~/Content/Images/logo-emeci.png" alt="" />
+                </a>
+            </div>
+
+
+            <!-- Topbar -->
+            <div class="topbar hidden-xs">
+                <ul class="loginbar pull-right list-inline top-links">
+                    <li>
+                        <a href="page_faq.html">
+                            <img src="~/Content/Images/icono-acceso.png" /> Acceso a M&eacute;dicos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/Expediente.EMECI">
+                            <img src="~/Content/Images/icono-facebook.png" /> EMECI
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/emecimx">
+                            <img src="~/Content/Images/icono-twitter.png" /> Emecimx
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End Topbar -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li><a class="page-scroll" href="home.aspx">Inicio</a></li>
+                    <li><a class="page-scroll" href="membresias.aspx">Membresias</a></li>
+                    <li><a class="page-scroll" href="especialistas.html">Especialistas</a></li>
+                    <li><a class="page-scroll" href="tips.html">Tips</a></li>
+                    <li><a class="page-scroll btn btn-primary" href="https://www.emeci.com/pacienteexpediente">Acceso a Expediente</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <section>
+        @RenderBody()
+    </section>
+
+    <footer id="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6">
+                    <p>
+                        <strong>Expediente M&eacute;dico Electr&oacute;nico Cl&iacute;nico Internacional</strong>
+                        <br />
+                        2016 &reg; Todos los Derechos Resevados
+                    </p>
+                </div>
+                <div class="col-xs-6">
+                    <ul class="accesos list-inline">
+                        <li><a href="home.aspx#promo-apps">Apps M&oacute;viles</a></li>
+                        <li><a href="home.aspx#formulario-contacto">Soporte</a></li>
+                        <li><a href="avisos-de-privacidad.html">Aviso de Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="~/Scripts/jquery-1.11.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script>
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) $('.navbar').addClass("shrink");
+            else $('.navbar').removeClass("shrink");
+        });
+    </script>
+    @RenderSection("Scripts", false)
+</body>
+</html>

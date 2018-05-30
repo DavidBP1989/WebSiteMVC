@@ -1,0 +1,39 @@
+﻿@model Emeci.Models.EmailMembership
+To: @Model.To
+Subject: @Model.Subject
+
+
+<body style="background: url('https://www.emeci.com/ConsultaMedico/img/fondo-acceso-emeci.jpg') no-repeat">
+    <div class="container" style="color: #000 !important; text-shadow: none !important; background-color: transparent !important; box-shadow: none !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; max-width: 1170px;">
+        <div class="row" style="color: #000 !important; text-shadow: none !important; background-color: transparent !important; box-shadow: none !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin-right: -15px; margin-left: -15px;">
+            <div class="col-sm-6 col-sm-offset-3" style="color: #000 !important; text-shadow: none !important; background-color: transparent !important; box-shadow: none !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px; float: left; width: 50%; margin-left: 25%;">
+                <div id="formulario-de-acceso" class="animated hidden" style="color: #000 !important; text-shadow: none !important; background-color:#fff !important; box-shadow: none !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-animation-duration: 1s; animation-duration: 1s; -webkit-animation-fill-mode: both; animation-fill-mode: both; border-radius: 5px; margin: 5em auto; padding: 30px;">
+                    <p class="text-center" style="color: #000 !important; text-shadow: none !important; background-color: transparent !important; box-shadow: none !important; orphans: 3; widows: 3; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin: 0 0 10px;" align="center">
+                        <img class="logotipo" src="https://www.emeci.com/consultamedico/img/emeci.png" alt="" style="color: #000 !important; text-shadow: none !important; background-color: transparent !important; box-shadow: none !important; page-break-inside: avoid; max-width: 100% !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; vertical-align: middle; margin-bottom: 1em; text-align: center; min-height: 110px; padding: 0.5em; border: 0;">
+                    </p>
+                    <hr style="height: 0; -moz-box-sizing: content-box; box-sizing: content-box; color: #000 !important; text-shadow: none !important; background-color: transparent !important; box-shadow: none !important; -webkit-box-sizing: border-box; margin-top: 20px; margin-bottom: 20px; border-top-color: #eee; border-top-style: solid; border-width: 1px 0 0;" />
+                    @if (Model.MembershipT == Emeci.Models.MembershipModel.MembershipType.NewFile)
+                    {
+                        <div style="color: #000 !important; text-shadow: none !important; background-color: transparent !important; box-shadow: none !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin-bottom: 15px;">
+                            <label style="color: #000 !important; text-shadow: none !important; background-color: transparent !important; box-shadow: none !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; display: inline-block; margin-bottom: 5px; font-weight: 500;">
+                                <strong>!Bienvenido @(Model.Name)!</strong>, se ha creado un nuevo expediente.
+                                <br />
+                                En unos momentos se contactaran con usted para seguir el proceso del nuevo expediente.
+                            </label>
+                        </div>
+                    }
+                    else
+                    {
+                        <div style="color: #000 !important; text-shadow: none !important; background-color: transparent !important; box-shadow: none !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin-bottom: 15px;">
+                            <label style="color: #000 !important; text-shadow: none !important; background-color: transparent !important; box-shadow: none !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; display: inline-block; margin-bottom: 5px; font-weight: 500;">
+                                <strong>!Bienvenido @(Model.Name)!</strong>, se ha renovado su expediente @Model.EMECI
+                                <br />
+                                
+                            </label>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

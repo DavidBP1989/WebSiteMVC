@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmeciModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="NewMembership">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="_Date" Type="smalldatetime" />
+    <Property Name="Reference" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="int" />
+    <Property Name="ReferenceBank" Type="nvarchar" MaxLength="50" />
+    <Property Name="PaymentMethod" Type="nvarchar" MaxLength="30" />
+    <Property Name="EMECI" Type="nvarchar" MaxLength="16" />
+  </EntityType>
+  <EntityType Name="Registro">
+    <Key>
+      <PropertyRef Name="idRegistro" />
+    </Key>
+    <Property Name="idRegistro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="Apellido" Type="nvarchar" MaxLength="50" />
+    <Property Name="Domicilio" Type="nvarchar" MaxLength="150" />
+    <Property Name="Colonia" Type="nvarchar" MaxLength="150" />
+    <Property Name="idCiudad" Type="int" />
+    <Property Name="idEstado" Type="nvarchar" MaxLength="2" />
+    <Property Name="IdPais" Type="nvarchar" MaxLength="2" />
+    <Property Name="Telefono" Type="nvarchar" MaxLength="50" />
+    <Property Name="TelefonoCel" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tipo" Type="nvarchar" MaxLength="1" />
+    <Property Name="Status" Type="nvarchar" MaxLength="1" />
+    <Property Name="IdUsuario" Type="nvarchar" MaxLength="25" />
+    <Property Name="FechaRegistro" Type="smalldatetime" />
+    <Property Name="FechaExpiracion" Type="smalldatetime" />
+    <Property Name="Emails" Type="nvarchar" MaxLength="150" />
+    <Property Name="FechaRenovacion" Type="smalldatetime" />
+    <Property Name="OtraCiudad" Type="nvarchar" MaxLength="50" />
+    <Property Name="NoExt" Type="nvarchar" MaxLength="5" />
+    <Property Name="CodigoPostal" Type="nvarchar" MaxLength="5" />
+    <Property Name="clave" Type="nvarchar" MaxLength="15" />
+    <Property Name="Emeci" Type="nvarchar" MaxLength="16" />
+    <Property Name="apellido2" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityContainer Name="EmeciModelStoreContainer">
+    <EntitySet Name="NewMembership" EntityType="Self.NewMembership" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Registro" EntityType="Self.Registro" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

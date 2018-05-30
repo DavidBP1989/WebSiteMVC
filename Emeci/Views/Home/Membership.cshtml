@@ -1,0 +1,170 @@
+﻿@model Emeci.Models.MembershipModel
+@section Scripts
+{
+    <script src="~/Scripts/jquery.maskedinput.js"></script>
+    <script src="~/Scripts/Tool.js"></script>
+    <script src="~/Scripts/Membership.js"></script>  
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="col-md-10 col-md-push-1">
+        <h1>Membresia EMECI</h1>
+        <br />
+        @if (Model.Status != Emeci.Models.PayUModel.StatusT.Ninguno)
+        {
+            <div class="row">
+                <div class="col-lg-12">
+                    @switch (Model.Status)
+                    {
+                        case Emeci.Models.PayUModel.StatusT.Confirmado:
+                            <div class="alert alert-success fade in alert-dismissible">
+                                <strong>¡Bienvenido!</strong> Su pago fue aceptado, en un momento se pondr&aacute;n 
+                                en contacto con usted
+                            </div>
+                            break;
+                        case Emeci.Models.PayUModel.StatusT.Rechazado:
+                            <div class="alert alert-danger fade in alert-dismissible">
+                                <strong>¡Lo sentimos!</strong> Su pago fue reachazado por PayU Latam
+                            </div>
+                            break;
+                    }
+                </div>
+            </div>
+        }
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-body" style="padding: 20px 40px;">
+                        @using (Html.BeginForm("Membership", "Home"))
+                        {
+                            Model.Type = Emeci.Models.MembershipModel.MembershipType.NewFile;
+                            @Html.HiddenFor(x => x.Type)
+
+                            <h2 class="text-center">Nuevo Expediente</h2>
+                            <br />
+                            <ul class="lista-caracteristicas list-unstyled">
+                                <li>Acceso desde Internet los 365 d&iacute;as del año.</li>
+                                <li>Mant&eacute;n tu informaci&oacute;n de salud al d&iacute;a, est&eacute;s, donde est&eacute;s.</li>
+                                <li>Almacenamiento de estudios, recetas, y archivos digitales en la nube.</li>
+                                <li>Aplicaci&oacute;n m&oacute;vil para el paciente.</li>
+                                <li>Acceso seguro, r&aacute;pido y amigable.</li>
+                            </ul>
+                            <div id="formcontacto">
+                                <h3 style="text-align:center">
+                                    Favor de llenar el siguiente formulario para completar el registro del expediente
+                                </h3>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <label>Nombre completo</label>
+                                        @Html.TextBoxFor(x => x.Name, null, new { @class = "form-control" })
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <label>Tel&eacute;fono de contacto</label>
+                                        @Html.TextBoxFor(x => x.Phone, null, new { @class = "form-control" })
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <label>Correo electr&oacute;nico</label>
+                                        @Html.TextBoxFor(x => x.Email, null, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                            </div>
+                            <p>&nbsp;</p>
+                            <br />
+                            <p class="text-center">
+                                <input type="submit" onclick="return NewFile()" class="btn btn-success" value="Crear Expediente" />
+                            </p>                            
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-body" style="padding: 20px 40px;">
+                        <h2 class="text-center">Renovaci&oacute;n</h2>
+                        <br />
+                        <p>
+                            Continu&eacute; disfrutando de los beneficios de su Expediente M&eacute;dico Electr&oacute;nico
+                            Cl&iacute;nico Internacional.
+                        </p>
+                        <p>Haga clic en el siguiente bot&oacute;n para extender su membres&iacute;a 1 año.</p>
+                        <center>
+                            @using (Html.BeginForm("Membership", "Home"))
+                            {
+                                Model.Type = Emeci.Models.MembershipModel.MembershipType.Renewal;
+                                @Html.HiddenFor(x => x.Type)
+
+                                <div class="row">
+                                    <div class="form-group col-sm-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+                                        <span>Tarjeta EMECI</span>
+                                        @Html.TextBoxFor(x => x.EMECI, null, new { @class = "form-control", @style="text-align:center" })
+                                    </div>
+                                </div>
+                                <input type="submit" onclick="return Renewal()" class="btn btn-primary" value="PAGAR RENOVACIÓN" />
+                            }   
+                        </center>
+                        @if (!string.IsNullOrEmpty(Model.Error))
+                        {
+                            <br />
+                            <div class="alert alert-danger fade in alert-dismissible">
+                                <strong>!Error¡</strong> @Model.Error
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel" id="contentPolitics" style="background-color:#F2F5A9">
+                    <div class="panel-body" style="padding:20px;">
+                        <input id="politics" type="checkbox" />
+                        &nbsp;Acepta los <a target="_blank" href="https://www.emeci.com/Terminos_Paciente.pdf">t&eacute;rminos y condiciones de EMECI</a> y
+                        haber le&iacute;do nuestro <a target="_blank" href="https://www.emeci.com/Aviso_de_Privacidad_Medico_EMECI.pdf">aviso de privacidad</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-body" style="padding:40px">
+                        <p>
+                            Para su comodidad puede realizar su registro o renovaci&oacute;n
+                            con distintas formas de pago con tarjetas de d&eacute;bito/cr&eacute;dito o
+                            realizar dep&oacute;sitos en los siguientes bancos o tiendas de conveniencia.</p>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-4 text-center">
+                                <h4 class="small">
+                                    <strong>Tarjetas de cr&eacute;dito/d&eacute;bito</strong>
+                                </h4>
+                                <p>
+                                    <img src="~/Content/Images/tarjetas.png" alt="">
+                                </p>
+                            </div>
+                            <div class="col-md-8 text-center">
+                                <h4 class="small">
+                                    <strong>Dep&oacute;sitos directos/referenciados</strong>
+                                </h4>
+                                <p>
+                                    <img src="~/Content/Images/depositos.png" alt="">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p>&nbsp;</p>
+        <p class="text-center">
+            Consideramos que es un mecanismo bastante sencillo, sin embargo, de tener dudas,
+            con gusto el departamento de soporte est&aacute; en la mayor de las disposiciones para auxiliarlo,
+            ya sea v&iacute;a correo electr&oacute;nico a <a href="mailto:soporte@emeci.com">soporte@emeci.com</a>,
+            v&iacute;a Facebook o Twitter.
+        </p>
+        <p class="text-center">Agradecemos su atenci&oacute;n y deseamos servirle para la conservaci&oacute;n de la salud de su familia.</p>
+    </div>
+</div>

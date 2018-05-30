@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmeciModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EmeciEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="NewMembership" EntityType="EmeciModel.NewMembership" />
+    <EntitySet Name="Registro" EntityType="EmeciModel.Registro" />
+  </EntityContainer>
+  <EntityType Name="NewMembership">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="C_Date" Type="DateTime" Precision="0" />
+    <Property Name="Reference" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="ReferenceBank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentMethod" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="EMECI" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Registro">
+    <Key>
+      <PropertyRef Name="idRegistro" />
+    </Key>
+    <Property Name="idRegistro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Domicilio" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Colonia" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="idCiudad" Type="Int32" />
+    <Property Name="idEstado" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="IdPais" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TelefonoCel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tipo" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="IdUsuario" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="FechaRegistro" Type="DateTime" Precision="0" />
+    <Property Name="FechaExpiracion" Type="DateTime" Precision="0" />
+    <Property Name="Emails" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="FechaRenovacion" Type="DateTime" Precision="0" />
+    <Property Name="OtraCiudad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NoExt" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="CodigoPostal" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="clave" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Emeci" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="apellido2" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>
